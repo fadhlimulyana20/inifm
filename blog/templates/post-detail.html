@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block helmet_title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+    </div>
+{% endblock %}
