@@ -6,7 +6,17 @@
 
 {% block content %}
     <div class="container py-5">
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.content }}</p>
+        <h1 class="mb-0">{{ post.title }}</h1>
+        <p class="text-muted">{{ post.author }} | {{ post.created_at }}</p>
+        {% if post.featured_image %}
+            <a href="{{ post.featured_image.url }}">
+                <img class="img-fluid rounded" src="{{ post.featured_image.url }}" alt="">
+            </a>
+        {% endif %}
+        <div class="blog-content py-3">
+            <div class="lead">
+                {{ post.content|safe }}
+            </div>
+        </div>
     </div>
 {% endblock %}
