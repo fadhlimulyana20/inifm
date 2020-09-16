@@ -1,0 +1,27 @@
+$layout-breakpoint-small: 576px;
+$layout-breakpoint-medium: 768px;
+$layout-breakpoint-large: 992px;
+$layout-breakpoint-extra-large: 1200px;
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.content{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.blog-content{
+    padding : 0;
+    p {
+        font-size : 1.25em;
+    }
+}
+
+@media (min-width: $layout-breakpoint-medium){
+    .blog-content{
+        padding-left : 5em;
+        padding-right : 5em;
+    }
+}

@@ -1,0 +1,16 @@
+/* line 6, static/sass/project.scss */
+body {
+  font-family: 'Nunito Sans', sans-serif; }
+
+/* line 9, static/sass/project.scss */
+.content {
+  padding: 0; }
+  /* line 11, static/sass/project.scss */
+  .content p {
+    font-size: 1.25em; }
+
+@media (min-width: 768px) {
+  /* line 17, static/sass/project.scss */
+  .content {
+    padding-left: 3em;
+    padding-right: 3em; } }

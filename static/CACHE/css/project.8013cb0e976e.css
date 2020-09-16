@@ -1,0 +1,21 @@
+/* line 6, static/sass/project.scss */
+body {
+  font-family: 'Nunito Sans', sans-serif; }
+
+/* line 10, static/sass/project.scss */
+.content {
+  padding-top: 3em;
+  padding-bottom: 3em; }
+
+/* line 15, static/sass/project.scss */
+.blog-content {
+  padding: 0; }
+  /* line 17, static/sass/project.scss */
+  .blog-content p {
+    font-size: 1.25em; }
+
+@media (min-width: 768px) {
+  /* line 23, static/sass/project.scss */
+  .blog-content {
+    padding-left: 5em;
+    padding-right: 5em; } }

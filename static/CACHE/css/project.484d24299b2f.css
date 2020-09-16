@@ -1,0 +1,10 @@
+/* line 1, static/sass/project.scss */
+body {
+  font-family: 'Nunito Sans', sans-serif; }
+
+/* line 4, static/sass/project.scss */
+.content {
+  padding: 2.5em; }
+  /* line 6, static/sass/project.scss */
+  .content p {
+    font-size: 5em; }

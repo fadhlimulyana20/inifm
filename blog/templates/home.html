@@ -3,17 +3,28 @@
 {% block helmet_title %} Blog {% endblock helmet_title %}
 
 {% block content %}
-    <div class="container py-5">
-        {% for post in post_list %}
-        <div class="card mb-4">
-            <div class="card-body">
-                <h2 class="card-title">{{ post.title }}</h2>
-                <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_at}} </p>
-                <p class="card-text">{{post.content|slice:":200"|safe }}</p>
-                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+<section class="content">
+   <div class="container py-5">
+       <h2 class="font-weight-bold mb-4">Artikel Terbaru</h2>
+        <div class="row no-gutters">
+            {% for post in post_list %}
+            <div class="col-lg-3 col-md-4 px-2 mb-2">
+                <div class="card mb-4 shadow">
+                    {% if post.featured_image %}
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="">
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_at}} </p>
+                        <p class="card-text">{{post.content|slice:":100"|safe }}</p>
+                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
+</section>
+
 
 {% endblock content %}
