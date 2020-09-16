@@ -3,8 +3,17 @@ $layout-breakpoint-medium: 768px;
 $layout-breakpoint-large: 992px;
 $layout-breakpoint-extra-large: 1200px;
 
+// color
+$bg-white: #FFFFFF;
+$bg-dark: #303133;
+
 body{
     font-family: 'Nunito Sans', sans-serif;
+}
+
+.main {
+    background-color: $bg-white;
+    margin-bottom: 100px;
 }
 
 .content{
@@ -17,6 +26,27 @@ body{
     p {
         font-size : 1.25em;
     }
+}
+
+.main-navbar{
+    font-size : 1em;
+    font-weight : 700;
+    .active{
+        .nav-link {
+            color: #ED4F4F !important;
+            font-weight: 800;
+        }
+    }
+}
+
+.footer{
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: $bg-dark;
+    color: $bg-white;
 }
 
 @media (min-width: $layout-breakpoint-medium){
