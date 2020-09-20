@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block helmet_title %}
+    iniFM Webisite
+{% endblock %}
+
+{% block content %}
+<section class="content main-site m-vh d-flex align-items-center" id="main">
+    <div class="container">
+        <h3 class="font-weight-bold text-white mb-0">Hello World,</h3>
+        <h1 class="font-weight-bold text-white">This is Fadhli Mulyana</h1>
+    </div>
+</section>
+<section class="content">
+    <div class="container py-5">
+        <h2 class="font-weight-bold mb-4">Artikel Terbaru</h2>
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="card shadow">
+                        {% if post.featured_image %}
+                            <img class="card-img cover-link" src="{{ post.featured_image.url }}" alt="">
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="card-title">{{ post.title }}</h4
+                            <p class="card-text">{{post.content|slice:50|safe }} ...</p>
+                            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-sm btn-primary font-weight-bold">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mt-3 d-flex justify-content-end">
+            <a class="btn btn-outline-primary font-weight-bold" href="/blog">Lihat Lebih Banyak</a>
+        </div>
+    </div>
+</section>
+
+<section class="content profile-brief text-white">
+    <div class="container py-5">
+        <h2 class="font-weight-bold mb-4">Profil Singkat</h2>
+        <h5><i class="far fa-id-card"></i> Muhammad Fadhli Putra Mulyana</h5>
+        <h5><i class="fas fa-briefcase"></i> Mahasiswa</h5>
+        <h5><i class="far fa-building"></i> Universitas Sebelas Maret</h5>
+        <h5><i class="fas fa-map-marker-alt"></i> Klaten, Indonesia</h5>
+    </div>
+</section>
+
+<section class="content d-flex align-item-center">
+    <div class="container py-5">
+        <input type="text" name="" id="" class="form-control">
+    </div>
+</section>
+
+{% endblock %}

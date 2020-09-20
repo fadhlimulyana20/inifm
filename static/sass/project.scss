@@ -28,6 +28,24 @@ body{
     }
 }
 
+.main-site{
+    background-image : linear-gradient(rgba(255,117,117, 1), rgba(255,117,117, 0.7)),
+                  url("../img/doodleb.jpg");
+    background-size : cover;
+    background-position :75%;
+}
+
+.profile-brief{
+    background-image : linear-gradient(rgba(48,49,51,1), rgba(48,49,51, 0.9)),
+                  url("../img/doodle.jpg");
+    background-size : cover;
+    background-position :20% 85%;
+}
+
+.m-vh{
+    min-height: 100vh;
+}
+
 .main-navbar{
     font-size : 1em;
     font-weight : 700;
@@ -37,6 +55,11 @@ body{
             font-weight: 800;
         }
     }
+}
+
+.cover-link {
+    height: 10em;
+    object-fit: cover;
 }
 
 .footer{
