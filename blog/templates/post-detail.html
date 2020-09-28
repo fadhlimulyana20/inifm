@@ -8,7 +8,7 @@
 <section class="content">
     <div class="container py-5">
         <h1 class="mb-0">{{ post.title }}</h1>
-        <p class="text-muted"><span class="badge badge-primary">{{ post.author }}</span> {{ post.created_at|date:"d F Y" }}</p>
+        <p class="text-muted"><span class="badge badge-primary">{{ post.author }}</span> <span class="badge badge-info">{{ post.category }}</span> {{ post.created_at|date:"d F Y" }} </p>
         {% if post.featured_image %}
             <a href="{{ post.featured_image.url }}">
                 <img class="img-fluid rounded" src="{{ post.featured_image.url }}" alt="">

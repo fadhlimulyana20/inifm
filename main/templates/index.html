@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ post.title }}</h4
                             <p class="card-text">{{post.content|slice:50|safe }} ...</p>
-                            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-sm btn-primary font-weight-bold">Read More &rarr;</a>
+                            <a href="{% url 'blog:post_detail' post.category.slug post.slug  %}" class="btn btn-sm btn-primary font-weight-bold">Read More &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -43,12 +43,40 @@
         <h5><i class="fas fa-briefcase"></i> Mahasiswa</h5>
         <h5><i class="far fa-building"></i> Universitas Sebelas Maret</h5>
         <h5><i class="fas fa-map-marker-alt"></i> Klaten, Indonesia</h5>
+        <a href="/tentang" class="btn btn-outline-light mt-4">Lihat Selengkapnya</a>
     </div>
 </section>
 
-<section class="content d-flex align-item-center">
+<section class="content d-flex align-item-center text-center">
     <div class="container py-5">
-        <input type="text" name="" id="" class="form-control">
+        <h2 class="font-weight-bold">Temukan Saya di Media Lain</h2>
+        <div class="row no-gutters social-grid">
+            <div class="col-md-3 col-6 px-2 mb-4">
+                <a href="https://twitter.com/fadhlimulyana" class="social-link btn btn-outline-primary px-md-5 px-3 py-3">
+                    <i class="d-block h1 fab fa-twitter"></i>
+                    <h5 class="font-weight-bold">Twiiter</h5>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 px-2 mb-4">
+                <a href="https://www.instagram.com/fadhlimulyana/" class="social-link btn btn-outline-primary px-md-5 px-3 py-3">
+                    <i class="d-block h1 fab fa-instagram"></i>
+                    <h5 class="font-weight-bold">Instagram</h5>
+                </a>
+            </div>
+                 <div class="col-md-3 col-6 px-2 mb-4">
+                <a href="https://medium.com/@fadhlimulyana20" class="social-link btn btn-outline-primary px-md-5 px-3 py-3">
+                    <i class="d-block h1 fab fa-medium"></i>
+                    <h5 class="font-weight-bold">Medium</h5>
+                </a>
+            </div>
+                 <div class="col-md-3 col-6 px-2 mb-4">
+                <a href="https://github.com/fadhlimulyana20" class="social-link btn btn-outline-primary px-md-5 px-3 py-3">
+                    <i class="d-block h1 fab fa-github"></i>
+                    <h5 class="font-weight-bold">Github</h5>
+                </a>
+            </div>
+
+        </div>
     </div>
 </section>
 

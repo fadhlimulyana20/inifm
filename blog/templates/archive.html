@@ -5,7 +5,9 @@
 {% block content %}
 <section class="content">
    <div class="container py-5">
-       <h2 class="font-weight-bold mb-4">Artikel Terbaru</h2>
+       <h2 class="font-weight-bold mb-4">
+           {{ archive }}
+       </h2>
         <div class="row no-gutters">
             {% for post in page_obj %}
             <div class="mb-2">

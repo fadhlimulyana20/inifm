@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="content">
+        <div class="container py-5">
+            <h1>Buat Post</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="btn btn-block btn-primary font-weight-bold mt-4" value="Submit">
+            </form>
+        </div>
+    </section>
+{% endblock %}

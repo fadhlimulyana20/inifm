@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block helmet_title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+<section class="content m-vh d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="row shadow rounded">
+            <div class="col-md-5 d-none d-md-inline main-site rounded">
+                <div class="d-flex align-items-center h-100 text-white">
+                    <div class="container">
+                        <h2 class="font-weight-bold">Selamat Datang</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <form method="post" class="p-4 p-md-5">
+                    <h2 class="font-weight-bold mb-4">Masuk Akun</h2>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        <input type="text" name="username" id="id_username" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="id_password">Password</label>
+                        <input type="password" name="password" id="id_password" class="form-control" required>
+                    </div>
+                    {% for message in messages %}
+                        <div class="alert {% if message.tags == 'error' %} alert-danger {%endif %}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    <input class="btn btn-success btn-block font-weight-bold mb-4" type="submit" value="Login" />
+                    {# Assumes you setup the password_reset view in your URLconf #}
+                    <p><a href="{% url 'password_reset' %}">Lupa Password?</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

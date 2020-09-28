@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     #third_pary
     'compressor',
+    'meta',
 
 ]
 
@@ -143,3 +144,10 @@ STATICFILES_FINDERS = (
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+META_SITE_PROTOCOL = 'http'
+META_SITE_DOMAIN = '127.0.0.1:8000'
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+
+LOGIN_REDIRECT_URL = '/'

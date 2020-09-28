@@ -72,9 +72,26 @@ body{
     color: $bg-white;
 }
 
+.social-grid{
+    margin-top:3.5em;
+    .social-link{
+        border-radius: 1.2em;
+        .h1{
+            font-size: 3em;
+        }
+    }
+}
+
 @media (min-width: $layout-breakpoint-medium){
     .blog-content{
         padding-left : 5em;
         padding-right : 5em;
     }
+    .social-grid{
+        .social-link{
+            .h1{
+                font-size: 7em;
+            }
+    }
+}
 }
