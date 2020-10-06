@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from froala_editor import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
-    path('', include('main.urls'))
+    path('', include('main.urls')),
+    path('froala_editor/',include('froala_editor.urls'))
 ]
 #
 # urlpatterns += staticfiles_urlpatterns()

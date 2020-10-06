@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from meta.models import ModelMeta
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
+from froala_editor.fields import FroalaField
 
 # Create your models here.
 STATUS = (
@@ -33,7 +34,7 @@ class Post(ModelMeta, models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
+    content = FroalaField()
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = models.ImageField(upload_to=post_directory_path, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)

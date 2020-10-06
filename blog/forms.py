@@ -1,13 +1,21 @@
-from django.forms import ModelForm
+from django import forms
 from .models import Post
+from froala_editor.widgets import FroalaEditor
 
-class PostForm(ModelForm):
+class PostForm(forms.ModelForm):
+    content = forms.CharField(widget=FroalaEditor(options={
+        'toolbarInline': False,
+        'heightMin': 300,
+    }))
+    title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Type some Title'}))
+
     class Meta:
         model = Post
         fields = [
             'title',
             'content',
             'status',
+            'category',
             'featured_image'
         ]
 
